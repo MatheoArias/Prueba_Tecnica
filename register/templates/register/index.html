@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="header"
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Habitantes</title>
+    {% load static %}
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    {% comment %} Agrego el header de la pagina principal {% endcomment %}
+    <header class="header">
+        <section class="header__cointainer">
+                <div class="header__container--logo">
+                    <img class="logo_nav__img" src="">
+                </div>
+        </section>
+        {% comment %} Agrego la barra de la navegación del pag principal {% endcomment %}
+        <nav class= "section__nav">
+            <a class="section__nav" href="#"><img class="nav__img" src=""></a>
+            <a class="section__nav" href="#"><img class="nav__img" src=""></a>      
+            <a class="section__nav" href="#"><img class="nav__img" src=""></a>
+            <a class="section__nav" href="#"><img class="nav__img" src=""></a>
+        </nav>
+    </header>
+    {% block  main %}
+    {% endblock  %}
+    <footer class="footer">
+        <a href="#"><img src="" alt="Instagram">fotter2</a>
+        <a href="#"><img src="" alt="Facebook">fotter1</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{% extends 'register/index.html' %}
+{% load static %}
+{% block  main%}
+    <main>
+        <section class="main__state--section">
+            <form class ="main__form" action="{% url 'register:addspace' %}" method="POST">
+                {% csrf_token %}
+                <div class="form__inputs form__first--input">
+                    <label for=""></label>
+                    {{formstate.state_name}}
+                </div>
+                <div class="form__inputs form__first--input">
+                    <label for=""></label>
+                    {{formstate.indicative}}
+                </div>
+                <input id="button" type="submit" value="Ingresar">
+            </form>
+            <section class="main__messages">
+                {% if messages %}
+                <ul class="container__messages" style="list-style:none">
+                    {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{message}}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %} 
+            </section>
+            <section class="main_list">    
+                {% if state_list %}
+                {% for state in state_list %}            
+                    <ul style="list-style:none;" class ="main__list--object">
+                        <img src="" alt="">
+                        <li>
+                            <div class="list__atributte">
+                                {{state.state_name}}  
+                            </div>
+                            <div class="list__atributte">      
+                                {{state.indicative}}
+                            </div>
+                        </li> 
+                        <a class="ul__a--button" href="{% url 'register:editstate' state.pk %}">Editar<button class="a__button" id="edit"><img class="button__image" src="" alt=""></button></a>
+                        <a class="ul__a--button" href="{% url 'register:deletestate' state.pk %}">Eliminar<button class="a__button" id="delete"><img class="button__image" src="" alt=""></button></a>  
+                    </ul>             
+                {% endfor %}
+                {% else %}
+                    <p>No encuentro ningún Departamento</p>
+                {% endif %} 
+            </section>
+        </section>
+        <section class="main__state--section">
+            <form class ="main__form" action="{% url 'register:addspace' %}" method="POST">
+                {% csrf_token %}
+                <div class="form__inputs form__first--input">
+                    <label for=""></label>
+                    {{formcity.city_name}}
+                </div>
+                <div class="form__inputs form__first--input">
+                    <label for=""></label>
+                    {{formcity.state}}
+                </div>
+                <input id="button" type="submit" value="Ingresar">
+            </form>
+            <section class="main__messages">
+                {% if messages %}
+                <ul class="container__messages" style="list-style:none">
+                    {% for message in messages %}
+                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{message}}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %} 
+            </section>
+            <section class="main_list">    
+                {% if city_list %}
+                {% for city in city_list %}            
+                    <ul style="list-style:none;" class ="main__list--object">
+                        <img src="" alt="">
+                        <li>
+                            <div class="list__atributte">
+                                {{city.state}}  
+                            </div>
+                            <div class="list__atributte">      
+                                {{city.city_name}}
+                            </div>
+                        </li> 
+                        <a class="ul__a--button" href="{% url 'register:editcity' city.pk %}">Editar<button class="a__button" id="edit"><img class="button__image" src="" alt=""></button></a>
+                        <a class="ul__a--button" href="{% url 'register:deletecity' city.pk %}">Eliminar<button class="a__button" id="delete"><img class="button__image" src="" alt=""></button></a>  
+                    </ul>             
+                {% endfor %}
+                {% else %}
+                    <p>No encuentro ninguna Ciudad</p>
+                {% endif %} 
+            </section>
+        </section>
+    </main>
+{% endblock  %}

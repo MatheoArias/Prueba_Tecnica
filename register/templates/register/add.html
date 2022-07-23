@@ -1,0 +1,80 @@
+{% extends 'register/index.html' %}
+{% load static %}
+{% block  main%}
+    <main>
+        <form class ="main__form" action="{% url 'register:add' %}" method="POST">
+            {% csrf_token %}
+            <div class="form__inputs form__cc--input">
+                <label for="id_cc">Cedula</label>
+                {{form.cc}}
+            </div>
+            <div class="form__inputs form__city--input">
+                <label for="id_city">Ciudad</label>
+                {{form.city}}
+            </div>
+            <div class="form__inputs form__firstname--input">
+                <label for="id_first_name">Primer Nombre</label>
+                {{form.first_name}}
+            </div>
+            <div class="form__inputs form__lastname--input">
+                <label for="id_last_name">Segundo Nombre</label>
+                {{form.last_name}}
+            </div>
+            <div class="form__inputs form__firstsurnames--input">
+                <label for="id_first_surnames">Primer Apellido</label>
+                {{form.first_surnames}}
+            </div>
+            <div class="form__inputs form__lastsurnames--input">
+                <label for="id_last_surnames">Segundo Apellido</label>
+                {{form.last_surnames}}
+            </div>
+            <div class="form__inputs form__direction--input">
+                <label for="id_direction">Dirección</label>
+                {{form.direction}}
+            </div>
+            <div class="form__inputs form__tel--input">
+                <label for="id_tel_number">Teléfono fijo</label>
+                {{form.tel_number}}
+            </div>
+            <div class="form__inputs form__cel--input">
+                <label for="id_cel_number">Telefono Celular</label>
+                {{form.cel_number}}
+            </div>
+            <input id="button" type="submit" value="Ingresar">
+         </form>
+        <section class="main__messages">
+            {% if messages %}
+            <ul class="container__messages" style="list-style:none">
+                {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %} 
+        </section>
+        <section class="main_list">    
+            {% if citizen_list %}
+            {% for citizen in citizen_list %}            
+                <ul style="list-style:none;" class ="main__list--object">
+                    <img src="" alt="">
+                    <li>
+                        <div class="list__atributte">
+                                {{citizen.first_name}}{{citizen.last_name}}{{citizen.fist_surnames}}{{citizen.last_surnames}}
+                        </div>
+                        <div class="list__atributte">      
+                                {{citizen.direction}}
+                        </div>
+                        <div class="list__atributte">
+                            {{citizen.tel_number}}
+                            {{citizen.cel_number}}
+                        </div>
+                    </li> 
+                    <a class="ul__a--button" href="{% url 'register:edit' citizen.pk %}">Editar<button class="a__button" id="edit"><img class="button__image" src="" alt=""></button></a>
+                    <a class="ul__a--button" href="{% url 'register:delete' citizen.pk %}">Eliminar<button class="a__button" id="delete"><img class="button__image" src="" alt=""></button></a>  
+                </ul>             
+            {% endfor %}
+            {% else %}
+                <p>No ha agregado ninún habitante</p>
+            {% endif %} 
+        </section>
+    </main>
+{% endblock  %}
