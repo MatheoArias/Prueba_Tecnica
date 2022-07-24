@@ -1,16 +1,16 @@
 {% extends 'register/index.html' %}
 {% load static %}
 {% block  main%}
-    <main>
+    <main class="main__addspace">
         <section class="main__state--section">
             <form class ="main__form" action="{% url 'register:addspace' %}" method="POST">
                 {% csrf_token %}
                 <div class="form__inputs form__first--input">
-                    <label for=""></label>
+                    <label for="id_state_name">Departamento</label>
                     {{formstate.state_name}}
                 </div>
                 <div class="form__inputs form__first--input">
-                    <label for=""></label>
+                    <label for="id_indicative">Indicativo</label>
                     {{formstate.indicative}}
                 </div>
                 <input id="button" type="submit" value="Ingresar">
@@ -37,8 +37,8 @@
                                 {{state.indicative}}
                             </div>
                         </li> 
-                        <a class="ul__a--button" href="{% url 'register:editstate' state.pk %}">Editar<button class="a__button" id="edit"><img class="button__image" src="" alt=""></button></a>
-                        <a class="ul__a--button" href="{% url 'register:deletestate' state.pk %}">Eliminar<button class="a__button" id="delete"><img class="button__image" src="" alt=""></button></a>  
+                        <a class="ul__a--button" href="{% url 'register:editstate' state.pk %}"><button class="a__button" id="edit"><img class="button__image" src="{% static 'register/editar.svg' %}" alt="Este es el boton de esitar"></button></a>
+                        <a class="ul__a--button" href="{% url 'register:deletestate' state.pk %}"><button class="a__button" id="delete"><img class="button__image" src="{% static 'register/basura.svg' %}" alt="Este es el botón de Eliminar"></button></a>  
                     </ul>             
                 {% endfor %}
                 {% else %}
@@ -46,15 +46,15 @@
                 {% endif %} 
             </section>
         </section>
-        <section class="main__state--section">
+        <section class="main__city--section">
             <form class ="main__form" action="{% url 'register:addspace' %}" method="POST">
                 {% csrf_token %}
                 <div class="form__inputs form__first--input">
-                    <label for=""></label>
+                    <label for="id_city_name">Ciudad</label>
                     {{formcity.city_name}}
                 </div>
                 <div class="form__inputs form__first--input">
-                    <label for=""></label>
+                    <label for="id_state">Departamento</label>
                     {{formcity.state}}
                 </div>
                 <input id="button" type="submit" value="Ingresar">
@@ -81,8 +81,8 @@
                                 {{city.city_name}}
                             </div>
                         </li> 
-                        <a class="ul__a--button" href="{% url 'register:editcity' city.pk %}">Editar<button class="a__button" id="edit"><img class="button__image" src="" alt=""></button></a>
-                        <a class="ul__a--button" href="{% url 'register:deletecity' city.pk %}">Eliminar<button class="a__button" id="delete"><img class="button__image" src="" alt=""></button></a>  
+                        <a class="ul__a--button" href="{% url 'register:editcity' city.pk %}"><button class="a__button" id="edit"><img class="button__image" src="{% static 'register/editar.svg' %}" alt="Este es el botón de Editar"></button></a>
+                        <a class="ul__a--button" href="{% url 'register:deletecity' city.pk %}"><button class="a__button" id="delete"><img class="button__image" src="{% static 'register/basura.svg' %}" alt="Este es el botón de Eliminar"></button></a>  
                     </ul>             
                 {% endfor %}
                 {% else %}

@@ -1,0 +1,15 @@
+{% extends 'register/index.html' %}
+{% load static %}
+{% block  main%}
+<style>.errorlist{color:red;} label{display:None}</style>
+  <main class="main__signup">
+    <h1>Agregar Usuario</h1>
+    <form class='section__Form--signup'action="" method="post">
+      {% csrf_token %}
+          {{form.as_p}}
+      <div class='form__button--singup'>
+          <input type="submit" id="button" value="Acceder">
+      </div>
+    </form>
+</main>
+{% endblock %}

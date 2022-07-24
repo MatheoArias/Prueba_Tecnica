@@ -88,3 +88,6 @@ def deletestate(request,state_id):
     messages.success(request, f'Eliminó a: {state.state_name}')
     return redirect('register:addspace')
 # """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+def menu(request):
+    return render(request,"register/menu.html")

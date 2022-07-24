@@ -1,7 +1,7 @@
 {% extends 'register/index.html' %}
 {% load static %}
 {% block  main%}
-    <main>
+    <main class="main__add">
         <form class ="main__form" action="{% url 'register:add' %}" method="POST">
             {% csrf_token %}
             <div class="form__inputs form__cc--input">
@@ -53,7 +53,7 @@
         </section>
         <section class="main_list">    
             {% if citizen_list %}
-            {% for citizen in citizen_list %}            
+            {% for citizen in citizen_list %}        
                 <ul style="list-style:none;" class ="main__list--object">
                     <img src="" alt="">
                     <li>
@@ -68,8 +68,9 @@
                             {{citizen.cel_number}}
                         </div>
                     </li> 
-                    <a class="ul__a--button" href="{% url 'register:edit' citizen.pk %}">Editar<button class="a__button" id="edit"><img class="button__image" src="" alt=""></button></a>
-                    <a class="ul__a--button" href="{% url 'register:delete' citizen.pk %}">Eliminar<button class="a__button" id="delete"><img class="button__image" src="" alt=""></button></a>  
+                    <a class="ul__a--button" href="{% url 'register:edit' citizen.pk %}"><button class="a__button" id="edit"><img class="button__image" src="{% static 'register/editar.svg' %}" alt=""></button></a>
+
+                    <a class="ul__a--button" href="{% url 'register:delete' citizen.pk %}"><button class="a__button" id="delete"><img class="button__image" src="{% static 'register/basura.svg' %}" alt=""></button></a>  
                 </ul>             
             {% endfor %}
             {% else %}

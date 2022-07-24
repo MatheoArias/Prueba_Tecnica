@@ -42,9 +42,9 @@ class Citizen(models.Model):
     last_name=models.CharField(("Segundo Nombre"),max_length=50,blank=True)
     first_surnames=models.CharField(("Primer Apellido"), max_length=50,blank=False)
     last_surnames=models.CharField(("Segundo Apellido"), max_length=50,blank=False)
-    direction=models.CharField(("Dirección"), max_length=50,blank=False,unique=True)
-    tel_number=models.IntegerField(blank=False,verbose_name="Teléfono Fijo",unique=True)
-    cel_number=models.IntegerField(blank=False,verbose_name="Teléfono Celular",unique=True)
+    direction=models.CharField(("Dirección"), max_length=50,blank=False)
+    tel_number=models.IntegerField(blank=False,verbose_name="Teléfono Fijo")
+    cel_number=models.IntegerField(blank=False,verbose_name="Teléfono Celular")
 
 
     class Meta:

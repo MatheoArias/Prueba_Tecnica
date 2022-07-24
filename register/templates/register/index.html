@@ -6,29 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Habitantes</title>
     {% load static %}
-    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'register/styleindex.css' %}">
 </head>
 <body>
-    {% comment %} Agrego el header de la pagina principal {% endcomment %}
-    <header class="header">
-        <section class="header__cointainer">
-                <div class="header__container--logo">
-                    <img class="logo_nav__img" src="">
-                </div>
-        </section>
-        {% comment %} Agrego la barra de la navegación del pag principal {% endcomment %}
-        <nav class= "section__nav">
-            <a class="section__nav" href="#"><img class="nav__img" src=""></a>
-            <a class="section__nav" href="#"><img class="nav__img" src=""></a>      
-            <a class="section__nav" href="#"><img class="nav__img" src=""></a>
-            <a class="section__nav" href="#"><img class="nav__img" src=""></a>
-        </nav>
+    <header>
+        <h1>Registro de Habitantes</h1>
     </header>
+    <nav class= "section__nav">
+        <a class="section__nav" href="{% url 'register:menu' %}"><img class="nav__img" src="{% static 'register/menu.svg' %}"></a>
+        <a class="section__nav" href="{% url 'register:addspace' %}"><img class="nav__img" src="{% static 'register/state.svg' %}"></a>      
+        <a class="section__nav" href="{% url 'register:add' %}"><img class="nav__img" src="{% static 'register/citizen.svg' %}"></a>
+        <a class="section__nav" href="{% url 'logout' %}"><img class="nav__img" src="{% static 'register/logout.svg' %}"></a>
+    </nav>
     {% block  main %}
     {% endblock  %}
-    <footer class="footer">
-        <a href="#"><img src="" alt="Instagram">fotter2</a>
-        <a href="#"><img src="" alt="Facebook">fotter1</a>
-    </footer>
 </body>
 </html>

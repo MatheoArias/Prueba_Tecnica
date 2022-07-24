@@ -1,0 +1,24 @@
+{% extends 'register/home.html' %}
+{% load static %}
+{% block main %}
+<style>.errorlist{color:red;}</style>
+<main class="main__menu">
+    <h1>Bienvenido</h1>
+    <section class="main__image">
+        <section class="section__image">
+            <a class="a__menu" href="{% url 'signup' %}"><img class="nav__img" src="{% static 'register/usuario.svg' %}"></a>
+            <p>Agregar Usuario</p>
+        </section>
+        <section class="section__image">>
+            <a class="a__menu" href="{% url 'register:addspace' %}"><img class="nav__img" src="{% static 'register/state.svg' %}"></a> 
+            <p>Agregar algún lugar</p> 
+        </section>
+        <section class="section__image">>
+            <a class="a__menu" href="{% url 'register:add' %}"><img class="nav__img" src="{% static 'register/citizen.svg' %}"></a>
+            <p>Agregar Habitantes</p>
+        </section>
+    </section>
+</main>
+{% endblock %}
+
+    

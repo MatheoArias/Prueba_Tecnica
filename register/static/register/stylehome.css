@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(90deg, #FFFC00 0%, #0d0d0d 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
+
+main{
+    display: flex;
+    align-items: center;
+    background:#FFFFFF;
+    width: 60%;
+    height: 80%;
+    margin: 0 auto;
+    border-radius: 3rem;
+}
+
+main .main__warnning--green{
+    color: green;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+main form .form__input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+main form .form__input label{
+    color: #000000;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2.4rem;
+}
+
+main form .form__input input{
+    border: #000000 solis 0.1rem;
+    height: 3.5rem;
+    width: 40%;
+    color: #000000;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: center;
+}
+
+main form .form__input input::placeholder{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+main form .form__input--button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main form .form__input--button input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:4rem;
+    width: 13rem;
+    font-size: 1.4rem;
+    align-content: center;
+    background: linear-gradient(90deg, #FFFC00 0%, #FFFFFF 100%);
+    border: #000000 solid 0.1rem;
+    border-radius: 3rem
+}
+
+main form .form__input--button input:hover{
+    background: #FFFFFF;
+}
+
+main form .form__input--button p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:2.5rem;
+    width: 100%;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.7rem;
+}
+main form .form__input--button p a{
+    color:#000000;
+    text-decoration: none;
+}
+main form .form__input--button p a:hover{
+    font-size: 2rem;
+    color:#b5b217;
+    text-decoration: none;
+}
+
+main .maim__image--git {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    font-size: 1.6rem;
+    margin: 2.5rem;
+    color: #000000;
+}
+
+main .maim__image--git img{
+    width: 8rem;
+    height: 8rem
+}
+
+.main__passwordreset--form{
+    display: flex;
+    flex-direction: column;
+}
+
+.main__passwordreset--form h2{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.main__passwordreset--form p{
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.main__passwordreset--form form  .form__input input{
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+}
+.main__menu{
+    justify-content: center;
+    flex-direction: column;
+}
+.main__menu h1{
+    font-size: 5rem;
+    font-weight: 400;
+    text-align: center;
+
+}
+.main__image{
+    display: flex;
+    justify-content: center;
+}
+.main__menu .section__image{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    border: #000000 solid 0.5rem;
+    margin: 2rem;
+    background: #FFFC00;
+    border-radius: 3rem;
+}
+
+.main__menu .section__image a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    width: 15rem;
+}
+
+.main__menu .section__image a img{
+    height: 13rem;
+    width: 13rem;
+}
+
+.main__menu .section__image p{
+    font-size: 1.4rem;
+    font-weight: 400;
+    width: 100%;
+    height:4rem ;
+    text-align: center;
+    visibility: collapse;
+}
+
+.main__menu .section__image:hover{
+    background: #FFFFFF;
+}
+
+.main__menu .section__image:hover img{
+    transform: scale(1.2);
+}
+.main__menu .section__image:hover p{
+    visibility: visible;
+}

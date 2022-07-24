@@ -20,5 +20,6 @@ class FormCitizen(forms.ModelForm):
     class Meta:
         model=Citizen
         fields='__all__'
-        exclude=()
+
+        
         

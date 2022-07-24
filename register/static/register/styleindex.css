@@ -1,0 +1,513 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+body{
+    display: grid;
+    grid-template-areas: "nav header header"
+                            "nav main main"
+                            "nav main main"
+                            "nav main main";
+    grid-template-columns:30vh repeat(2, 1fr);
+    grid-template-rows:  15vh repeat(3, 28.3vh)
+}
+
+header{
+    grid-area: header;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #FFFC00 0%, #0d0d0d 100%);
+    
+}
+
+header h1{
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 60%;
+    border-radius: 3rem;
+    background: #ffffff;
+
+}
+
+nav {
+    position: sticky;
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFC00 ;
+    
+}
+
+nav a{
+    width: 50%;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+nav a img {
+    height: 6rem;
+    width: 8rem;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 3rem;
+}
+.main__add{
+    justify-self: center;
+    align-self: center;
+    grid-area: main;
+    display: grid;
+    grid-template-areas: "form list"
+                        "form list"
+                        "messagge messagge";
+    grid-template-columns: repeat(2,minmax(50%,1440px));
+    grid-template-rows: repeat(2,minmax(45%,1440px)) minmax(10%,1440px);
+    background: #FFFC00 ;
+    width: 90%;
+    height: 90%;
+    border-radius: 3rem ;
+}
+
+main .main__form{
+    grid-area:form;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:1rem 1rem;
+}
+main .form__inputs{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin: 0.1rem 0;
+    
+}
+
+main .form__inputs label{
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.2rem;
+    margin: 0.1rem;
+}
+main .form__inputs input{
+    width: 60%;
+    height: 70%;
+    margin: 0.1rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+main .main__form .form__city--input select{
+    height:60% ;
+    width: 60%;
+    font-size: 1.1rem;
+    text-align: center;
+    
+}
+
+#button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:4rem;
+    width: 13rem;
+    font-size: 1.4rem;
+    align-content: center;
+    background: #0d0d0d;
+    color: #ffffff;
+    border-radius: 3rem
+}
+
+
+.main__add .main_list{
+    grid-area:list;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:2rem 2rem;
+    overflow-y: scroll;
+}
+
+.main__add .main_list ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    width: 90%;
+    margin: 0.5rem auto;
+    border-radius: 2rem;
+}
+
+.main__add .main_list li{
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.8rem;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.main__add .main_list a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 90%;
+}
+.main__add .main_list a button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border: #0d0d0d solid 0.1rem;
+    border-radius: 50%;
+    width:60%;
+    height: 100%;
+}
+
+#button:hover{
+    background: linear-gradient(90deg, #FFFC00 0%, #FFFFFF 100%);
+    color: #0d0d0d;
+}
+
+.main__add .main_list a img{
+    width: 3rem;
+    height: 3rem;
+}
+.main__add .main__messages{
+    grid-area:messagge;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__add .main__messages ul li{
+    font-size: 1rem;
+}
+
+.main__addspace{
+    justify-self: center;
+    align-self: center;
+    grid-area: main;
+    display: grid;
+    grid-template-areas: "state city"
+                        "state city";
+    grid-template-columns: repeat(2,minmax(50%,1440px));
+    grid-template-rows: repeat(2,minmax(50%,1440px));
+    align-items: center;
+    background: #FFFC00 ;
+    width: 90%;
+    height: 90%;
+    border-radius: 3rem ;
+    overflow-y: hidden;
+    padding: 1rem;
+}
+.main__addspace .main__state--section{
+    grid-area: state;
+    display: grid;
+    grid-template-rows: 45% 10% 45%;
+}
+
+.main__addspace .main__state--section form{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.main__addspace .main__state--section .main__form .form__inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0.1rem 0;
+}
+
+.main__addspace .main__state--section .main__form .form__inputs label{
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.6rem;
+    margin: 0.1rem;
+}
+.main__addspace .main__state--section .main__form .form__inputs input{
+    width: 80%;
+    height: 40%;
+    margin: 0.1rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.main__addspace .main__state--section .main__form .form__inputs select{
+    height:60% ;
+    width: 60%;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.main__addspace .main__state--section .main__messages{
+    grid-column: 1/3;
+    grid-row: 2/3 
+}
+
+.main__addspace .main__state--section .main_list{
+    grid-column: 1/3;
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.main__addspace .main__city--section{
+    grid-area: city;
+    display: grid;
+    grid-template-rows: 45% 10% 45%;
+    align-items: center;
+}
+
+.main__addspace .main__city--section form{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main__addspace .main__city--section form{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.main__addspace .main__city--section .main__form .form__inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0.1rem 0;
+}
+
+.main__addspace .main__city--section .main__form .form__inputs label{
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.6rem;
+    margin: 0.1rem;
+}
+.main__addspace .main__city--section .main__form .form__inputs input{
+    width: 80%;
+    height: 40%;
+    margin: 0.1rem;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.main__addspace .main__city--section .main__form .form__inputs select{
+    height:40% ;
+    width: 80%;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.main__addspace .main__city--section .main__messages{
+    grid-column: 1/3;
+    grid-row: 2/3 
+}
+
+
+.main__addspace .main_list{
+    overflow-y: scroll;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin:2rem 2rem;
+    
+}
+
+.main__addspace .main_list ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    width: 90%;
+    margin: 0.5rem auto;
+    border-radius: 2rem;
+}
+
+.main__addspace .main_list li{
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.8rem;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.main__addspace .main_list a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 90%;
+}
+.main__addspace .main_list a button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border: #0d0d0d solid 0.1rem;
+    border-radius: 50%;
+    width:60%;
+    height: 100%;
+}
+#button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:3rem;
+    width: 13rem;
+    font-size: 1.4rem;
+    align-content: center;
+    background: #0d0d0d;
+    color: #ffffff;
+    border-radius: 3rem
+}
+
+#button:hover{
+    background: linear-gradient(90deg, #FFFC00 0%, #FFFFFF 100%);
+    color: #0d0d0d;
+}
+.main__addspace .main_list a img{
+    width: 3rem;
+    height: 3rem;
+}
+.main__addspace .main__messages{
+    grid-area:messagge;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__addspace .main__messages ul li{
+    font-size: 1rem;
+}
+
+.main__addspace .main__city--section .main_list{
+    grid-column: 1/3;
+    grid-row: 3/4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__signup{
+    grid-area: main;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    background: #FFFC00 ;
+    width: 90%;
+    height: 90%;
+    border-radius: 3rem;
+}
+
+.main__signup h1{
+    font-size:2rem;
+    font-weight: 700;
+    width: 50%;
+    text-align: center;
+}
+.main__signup h1::after{
+    background-image: url('./github.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.main__signup .section__Form--signup{
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    margin:0.3rem 0;
+    width: 100%;
+    align-items: center;
+}
+
+.main__signup .section__Form--signup p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 100%;   
+}
+
+.main__signup .section__Form--signup p label{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin:0.6rem 0;
+}
+
+.main__signup .section__Form--signup p select,input{
+    position: relative;
+    align-self: center;
+    width: 80%;
+    height: 2.3rem;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.3rem;
+    margin:0.2rem auto;
+}
+.main__signup .section__Form--signup p input::placeholder{
+    font-size: 1.3rem;
+}
+
+
+.main__signup .section__Form--signup p span,ul,li{
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+ 
