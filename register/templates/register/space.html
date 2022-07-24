@@ -2,43 +2,64 @@
 {% load static %}
 {% block  main%}
     <main class="main__addspace">
+        <!-- Comienza la sección de Departamentos-->
         <section class="main__state--section">
+             <!-- Comienza el formulario de Deparatamento-->
             <form class ="main__form" action="{% url 'register:addspace' %}" method="POST">
                 {% csrf_token %}
+                 <!-- Input para agregar el nombre del Departamento . Ex: Antioquia -->
                 <div class="form__inputs form__first--input">
                     <label for="id_state_name">Departamento</label>
                     {{formstate.state_name}}
                 </div>
+                <!-- Input para agregar el Indicativo del Departamento . Ex: 604 -->
                 <div class="form__inputs form__first--input">
                     <label for="id_indicative">Indicativo</label>
                     {{formstate.indicative}}
                 </div>
+                 <!-- botón para enviar el formulario del Departamento . Ex: 604 -->
                 <input id="button" type="submit" value="Ingresar">
             </form>
+            <!-- Comienza el formulario de Departamentos-->
             <section class="main__messages">
                 {% if messages %}
                 <ul class="container__messages" style="list-style:none">
                     {% for message in messages %}
-                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{message}}</li>
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                            {{message}}
+                        </li>
                     {% endfor %}
                 </ul>
                 {% endif %} 
             </section>
+            <!-- Comienza la lista de Deparatamento-->
             <section class="main_list">    
                 {% if state_list %}
-                {% for state in state_list %}            
+                {% for state in state_list %}
+                 <!-- contenedor de cada elemento de la lista-->            
                     <ul style="list-style:none;" class ="main__list--object">
-                        <img src="" alt="">
                         <li>
+                            <!-- 'Propiedad nombre del departamento' del elemento de la lista Ex:Antioquia-->
                             <div class="list__atributte">
                                 {{state.state_name}}  
                             </div>
+                            <!-- 'Propiedad Indicativo' del elemento de la lista Ex:604-->
                             <div class="list__atributte">      
                                 {{state.indicative}}
                             </div>
                         </li> 
-                        <a class="ul__a--button" href="{% url 'register:editstate' state.pk %}"><button class="a__button" id="edit"><img class="button__image" src="{% static 'register/editar.svg' %}" alt="Este es el boton de esitar"></button></a>
-                        <a class="ul__a--button" href="{% url 'register:deletestate' state.pk %}"><button class="a__button" id="delete"><img class="button__image" src="{% static 'register/basura.svg' %}" alt="Este es el botón de Eliminar"></button></a>  
+                        <!-- Botón Editar -->
+                        <a class="ul__a--button" href="{% url 'register:editstate' state.pk %}">
+                            <button class="a__button" id="edit">
+                                <img class="button__image" src="{% static 'register/editar.svg' %}" alt="Este es el boton de editar">
+                            </button>
+                        </a>
+                        <!-- Botón Eliminar -->
+                        <a class="ul__a--button" href="{% url 'register:deletestate' state.pk %}">
+                            <button class="a__button" id="delete">
+                                <img class="button__image" src="{% static 'register/basura.svg' %}" alt="Este es el botón de Eliminar">
+                            </button>
+                        </a>  
                     </ul>             
                 {% endfor %}
                 {% else %}
@@ -46,37 +67,50 @@
                 {% endif %} 
             </section>
         </section>
+        <!-- Aquí Termina la sección de Departamentos -->
+        
+        <!-- Comienza la sección Ciudades -->
         <section class="main__city--section">
+            <!-- Comienza la el formulario de la sección Ciudades -->
             <form class ="main__form" action="{% url 'register:addspace' %}" method="POST">
                 {% csrf_token %}
-                <div class="form__inputs form__first--input">
-                    <label for="id_city_name">Ciudad</label>
-                    {{formcity.city_name}}
-                </div>
+                <!-- Select para agregar el nombre del departamento, devbe estar previamente Agregado. Ex: Antioquia -->
                 <div class="form__inputs form__first--input">
                     <label for="id_state">Departamento</label>
                     {{formcity.state}}
                 </div>
+                <!-- Input para agregar el nombre de la ciudad. Ex: Bello -->
+                <div class="form__inputs form__first--input">
+                    <label for="id_city_name">Ciudad</label>
+                    {{formcity.city_name}}
+                </div>
                 <input id="button" type="submit" value="Ingresar">
             </form>
+             <!-- Comienza la el mensaje de la sección Ciudades -->
             <section class="main__messages">
                 {% if messages %}
                 <ul class="container__messages" style="list-style:none">
                     {% for message in messages %}
-                            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{message}}</li>
+                        <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                            {{message}}
+                        </li>
                     {% endfor %}
                 </ul>
                 {% endif %} 
             </section>
+            <!-- Comienza la lista de la sección Ciudades -->
             <section class="main_list">    
                 {% if city_list %}
-                {% for city in city_list %}            
+                {% for city in city_list %}    
+                <!-- contenedor de la lista sección Ciudades -->        
                     <ul style="list-style:none;" class ="main__list--object">
-                        <img src="" alt="">
+                        <!-- contenedor de cada uno de los elmentos en la sección Ciudades -->   
                         <li>
+                            <!-- 'Propiedad Departamento' del elemento de la lista Ex: Atlántico-->
                             <div class="list__atributte">
                                 {{city.state}}  
                             </div>
+                            <!-- 'Propiedad Nombre de la Ciudad' del elemento de la lista Ex: Medellín-->
                             <div class="list__atributte">      
                                 {{city.city_name}}
                             </div>

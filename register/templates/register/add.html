@@ -2,46 +2,63 @@
 {% load static %}
 {% block  main%}
     <main class="main__add">
+        <!-- Comienza el formulario para agaregar habitantes -->
         <form class ="main__form" action="{% url 'register:add' %}" method="POST">
             {% csrf_token %}
+            <!-- Input para agregar la Cédula del habitante ex: 1036874956 -->
             <div class="form__inputs form__cc--input">
                 <label for="id_cc">Cedula</label>
                 {{form.cc}}
             </div>
+            <!-- Select para agregar la Idicativo departamento. El departamento debe estar previamente agregado-->
+            <div class="form__inputs form__city--input">
+                <label for="id_city">Indicativo</label>
+                {{form.id_indicative}}
+            </div>
+            <!-- Select para agregar la Ciudad. la Ciudad debe estar previamente agregada -->
             <div class="form__inputs form__city--input">
                 <label for="id_city">Ciudad</label>
                 {{form.city}}
-            </div>
+            </div>            
+             <!-- Input para agregar el prime nombre . Ex: Luis -->
             <div class="form__inputs form__firstname--input">
                 <label for="id_first_name">Primer Nombre</label>
                 {{form.first_name}}
             </div>
+            <!-- Input para agregar el Segundo nombre . Ex: Alfonso -->
             <div class="form__inputs form__lastname--input">
                 <label for="id_last_name">Segundo Nombre</label>
                 {{form.last_name}}
             </div>
+            <!-- Input para agregar el Primer Apellido. Ex: Arias -->
             <div class="form__inputs form__firstsurnames--input">
                 <label for="id_first_surnames">Primer Apellido</label>
                 {{form.first_surnames}}
             </div>
+            <!-- Input para agregar el Segundo Apellido. Ex: Bedoya -->
             <div class="form__inputs form__lastsurnames--input">
                 <label for="id_last_surnames">Segundo Apellido</label>
                 {{form.last_surnames}}
             </div>
+            <!-- Input para agregar la Dirección. Ex: Avenida siempre viva 666 -->
             <div class="form__inputs form__direction--input">
                 <label for="id_direction">Dirección</label>
                 {{form.direction}}
             </div>
+            <!-- Input para agregar el teléfono fijo. Ex: 4540563 -->
             <div class="form__inputs form__tel--input">
                 <label for="id_tel_number">Teléfono fijo</label>
                 {{form.tel_number}}
             </div>
+            <!-- Input para agregar el teléfono celular. Ex: 3125689864 -->
             <div class="form__inputs form__cel--input">
                 <label for="id_cel_number">Telefono Celular</label>
                 {{form.cel_number}}
             </div>
+            <!-- Botón para enviar el formulario -->
             <input id="button" type="submit" value="Ingresar">
          </form>
+        <!-- Comienza la sección de mensajes -->
         <section class="main__messages">
             {% if messages %}
             <ul class="container__messages" style="list-style:none">
@@ -51,28 +68,43 @@
             </ul>
             {% endif %} 
         </section>
+        <!-- Comienza la sección de las listas-->
         <section class="main_list">    
             {% if citizen_list %}
             {% for citizen in citizen_list %}        
                 <ul style="list-style:none;" class ="main__list--object">
-                    <img src="" alt="">
+                    <!-- este es el contenedor de cada elemento de la lista -->
                     <li>
+                        <!-- 'Propiedad Nombre' del elemento de la lista -->
                         <div class="list__atributte">
                                 {{citizen.first_name}}{{citizen.last_name}}{{citizen.fist_surnames}}{{citizen.last_surnames}}
                         </div>
+                        <!-- 'Propiedad Ciudad' del elemento de la lista -->
                         <div class="list__atributte">      
                                 {{citizen.direction}}
                         </div>
+                        <!-- 'Propiedad Contactos' del elemento de la lista -->
                         <div class="list__atributte">
+                            {{citizen.id_indicative}}
                             {{citizen.tel_number}}
                             {{citizen.cel_number}}
                         </div>
-                    </li> 
-                    <a class="ul__a--button" href="{% url 'register:edit' citizen.pk %}"><button class="a__button" id="edit"><img class="button__image" src="{% static 'register/editar.svg' %}" alt=""></button></a>
-
-                    <a class="ul__a--button" href="{% url 'register:delete' citizen.pk %}"><button class="a__button" id="delete"><img class="button__image" src="{% static 'register/basura.svg' %}" alt=""></button></a>  
+                    </li>
+                    <!-- Botón Editar -->
+                    <a class="ul__a--button" href="{% url 'register:edit' citizen.pk %}">
+                        <button class="a__button" id="edit">
+                            <img class="button__image" src="{% static 'register/editar.svg' %}" alt="">
+                        </button>
+                    </a>
+                    <!-- Botón Eliminar -->
+                    <a class="ul__a--button" href="{% url 'register:delete' citizen.pk %}">
+                        <button class="a__button" id="delete">
+                            <img class="button__image" src="{% static 'register/basura.svg' %}" alt="">
+                        </button>
+                    </a>  
                 </ul>             
             {% endfor %}
+            {% comment %} Si no existen elementos Agregados en la lista {% endcomment %}
             {% else %}
                 <p>No ha agregado ninún habitante</p>
             {% endif %} 

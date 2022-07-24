@@ -1,34 +1,55 @@
-{% extends 'register/home.html' %}
-{% load static %}
-{% block main %}
-<style>.errorlist{color:red;}</style>
+{% extends 'register/home.html' %} {% load static %} {% block main %}
 <main id="main__login">
-    {% if 'register' in request.GET %}
-      <p class="main__warnning--green">El Usuario fue Ingresado Correctamente.</p>
+  <!-- Comienza el el formulario para relizar la entrada a la aplicación-->
+  <form class="main__form--login" action="" method="post">
+    {% csrf_token %}
+    <!-- Alerta cuando no es correcto el ingreso de usuario-->
+    {% if form.non_field_errors %}
+    <p class="main__warnning--green">
+      El Usuario o la contraseña son incorrectos, vuela a intentarlo.
+    </p>
     {% endif %}
-      <form class='main__form--login' action="" method="post">
-        {% csrf_token %}
-        {% if form.non_field_errors %}
-            <p class="main__warnning--green" >El Usuario o la contraseña son incorrectos, vuela a intentarlo.</p>
-        {% endif %}
-
-        <div class='form__input form__input--login'>
-          <label for="id_username">Usuario</label>
-          <input type="text" name="username" autofocus maxlength="254" required
-              id="id_username" class="form-control" placeholder="Nombre de usuario"/>
-        </div>
-
-        <div class='form__input form__input--login'>
-          <label for+"id_password">Contraseña</label>
-          <input type="password" name="password" required
-              id="id_password" class="form-control" placeholder="Escriba su contraseña"/>
-        </div>
-        <div class="form__input--button">
-            <input type="submit" class="btn btn-primary btn-block" value="Acceder">
-            <p class='main__text--warning'>¿Ha olvidado su contraseña? Puede restaurarla <a href="{% url 'password_reset' %}" >aquí</a>.
-            </p>
-        </div>
-        <a  class="maim__image--git" href="https://github.com/matheoarias/"><img src="{% static 'register/github.svg'%}" alt="Instagram">matheoarias</a>
-      </form>
+    <!-- Input nombre del Usuario ex:MatheoArias-->
+    <div class="form__input form__input--login">
+      <label for="id_username">Usuario</label>
+      <input
+        type="text"
+        name="username"
+        autofocus
+        maxlength="254"
+        required
+        id="id_username"
+        class="form-control"
+        placeholder="Nombre de usuario"
+      />
+    </div>
+    <!-- Input contraseña del Uusuario ex: ********-->
+    <div class="form__input form__input--login">
+      <label for="id_password">Contraseña</label>
+      <input
+        type="password"
+        name="password"
+        required
+        id="id_password"
+        class="form-control"
+        placeholder="Escriba su contraseña"
+      />
+    </div>
+    <!-- Botón Ingreso del formulario-->
+    <div class="form__input--button">
+      <input type="submit" class="btn btn-primary btn-block" value="Acceder" />
+      <p class="main__text--warning">
+        ¿Ha olvidado su contraseña? Puede restaurarla
+        <a href="{% url 'password_reset' %}">aquí</a>.
+      </p>
+    </div>
+    <!-- Imagen de git-->
+    <a class="maim__image--git" href="https://github.com/matheoarias/">
+      <img
+        src="{% static 'register/github.svg'%}"
+        alt="Imagen para entrar al repositorio de Mateo Arias"
+      />matheoarias
+    </a>
+  </form>
 </main>
 {% endblock %}

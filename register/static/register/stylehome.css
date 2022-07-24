@@ -4,10 +4,11 @@
     padding: 0;
     font-size: 62.5%;
     font-family: 'Poppins', sans-serif;
-    
+
 }
 
-body{
+/* Agrego estilos a cada una de las secciones 'body' que heredan del archivo 'stylehome.css' */
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,24 +17,25 @@ body{
     height: 100vh;
 }
 
-
-main{
+/* Agrego un 'main' en genarl por si existen características que pueda heredar para los diferentes templates */
+main {
     display: flex;
     align-items: center;
-    background:#FFFFFF;
+    background: #FFFFFF;
     width: 60%;
     height: 80%;
     margin: 0 auto;
     border-radius: 3rem;
 }
 
-main .main__warnning--green{
-    color: green;
+main .main__warnning--green {
+    color: #FFFFFF;
     font-style: normal;
     font-weight: 300;
     font-size: 1.2rem;
 }
 
+/* Comienzo agregar estilos de la eqtiqueta 'form' del template 'login' */
 main form {
     display: flex;
     flex-direction: column;
@@ -43,7 +45,7 @@ main form {
 }
 
 
-main form .form__input{
+main form .form__input {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,14 +53,14 @@ main form .form__input{
     margin: 2rem auto;
 }
 
-main form .form__input label{
+main form .form__input label {
     color: #000000;
     font-style: normal;
     font-weight: 300;
     font-size: 2.4rem;
 }
 
-main form .form__input input{
+main form .form__input input {
     border: #000000 solis 0.1rem;
     height: 3.5rem;
     width: 40%;
@@ -69,26 +71,26 @@ main form .form__input input{
     text-align: center;
 }
 
-main form .form__input input::placeholder{
+main form .form__input input::placeholder {
     font-style: normal;
     font-weight: 300;
     font-size: 1.6rem;
     text-align: center;
 }
 
-main form .form__input--button{
+main form .form__input--button {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-main form .form__input--button input{
+main form .form__input--button input {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:4rem;
+    height: 4rem;
     width: 13rem;
     font-size: 1.4rem;
     align-content: center;
@@ -97,30 +99,33 @@ main form .form__input--button input{
     border-radius: 3rem
 }
 
-main form .form__input--button input:hover{
+main form .form__input--button input:hover {
     background: #FFFFFF;
 }
 
-main form .form__input--button p{
+main form .form__input--button p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height:2.5rem;
+    height: 2.5rem;
     width: 100%;
     font-style: normal;
     font-weight: 300;
     font-size: 1.7rem;
 }
-main form .form__input--button p a{
-    color:#000000;
-    text-decoration: none;
-}
-main form .form__input--button p a:hover{
-    font-size: 2rem;
-    color:#b5b217;
+
+main form .form__input--button p a {
+    color: #000000;
     text-decoration: none;
 }
 
+main form .form__input--button p a:hover {
+    font-size: 2rem;
+    color: #b5b217;
+    text-decoration: none;
+}
+
+/* Agrego la imagen de 'git' y le doy estilos en el template 'login' */
 main .maim__image--git {
     display: flex;
     justify-content: center;
@@ -132,50 +137,58 @@ main .maim__image--git {
     color: #000000;
 }
 
-main .maim__image--git img{
+main .maim__image--git img {
     width: 8rem;
     height: 8rem
 }
 
-.main__passwordreset--form{
+/* Aquí comienzan los estilos del template 'addspace' */
+.main__passwordreset--form {
     display: flex;
     flex-direction: column;
 }
 
-.main__passwordreset--form h2{
+/* Comienzo agregar estilos al h2 de templeate 'addspace' */
+.main__passwordreset--form h2 {
     font-size: 2rem;
     font-weight: 700;
 }
 
-.main__passwordreset--form p{
+/* Comienzo agregar estilos al formulario de template 'adsspace' */
+.main__passwordreset--form p {
     font-size: 1.6rem;
     font-weight: 300;
     text-align: center;
 }
 
-.main__passwordreset--form form  .form__input input{
+.main__passwordreset--form form .form__input input {
     font-size: 1.5rem;
     font-weight: 300;
     text-align: center;
 }
-.main__menu{
+
+/* comienzo agaregar estilos para el template 'menu' */
+.main__menu {
     justify-content: center;
     flex-direction: column;
 }
-.main__menu h1{
+
+.main__menu h1 {
     font-size: 5rem;
     font-weight: 400;
     text-align: center;
 
 }
-.main__image{
+/* Configuro el 'section' para poner las tres imágenes  */
+.main__image {
     display: flex;
     justify-content: center;
 }
-.main__menu .section__image{
+
+.main__menu .section__image {
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     border: #000000 solid 0.5rem;
     margin: 2rem;
@@ -183,7 +196,7 @@ main .maim__image--git img{
     border-radius: 3rem;
 }
 
-.main__menu .section__image a{
+.main__menu .section__image a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,27 +204,28 @@ main .maim__image--git img{
     width: 15rem;
 }
 
-.main__menu .section__image a img{
+.main__menu .section__image a img {
     height: 13rem;
     width: 13rem;
 }
 
-.main__menu .section__image p{
+.main__menu .section__image p {
     font-size: 1.4rem;
     font-weight: 400;
     width: 100%;
-    height:4rem ;
+    height: 4rem;
     text-align: center;
     visibility: collapse;
 }
 
-.main__menu .section__image:hover{
+.main__menu .section__image:hover {
     background: #FFFFFF;
 }
 
-.main__menu .section__image:hover img{
+.main__menu .section__image:hover img {
     transform: scale(1.2);
 }
-.main__menu .section__image:hover p{
+
+.main__menu .section__image:hover p {
     visibility: visible;
 }

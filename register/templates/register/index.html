@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head id="header"
+<head id="header">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,24 @@
     <header>
         <h1>Registro de Habitantes</h1>
     </header>
+    <!-- Comienza la barra de navengación -->
     <nav class= "section__nav">
-        <a class="section__nav" href="{% url 'register:menu' %}"><img class="nav__img" src="{% static 'register/menu.svg' %}"></a>
-        <a class="section__nav" href="{% url 'register:addspace' %}"><img class="nav__img" src="{% static 'register/state.svg' %}"></a>      
-        <a class="section__nav" href="{% url 'register:add' %}"><img class="nav__img" src="{% static 'register/citizen.svg' %}"></a>
-        <a class="section__nav" href="{% url 'logout' %}"><img class="nav__img" src="{% static 'register/logout.svg' %}"></a>
+        <!-- Esta es la Imágen de Menú -->
+        <a class="section__nav" href="{% url 'register:menu' %}">
+            <img class="nav__img" src="{% static 'register/menu.svg' %}" alt=" Este es el logo de Menú. El ingreso de Menú">
+        </a>
+        <!-- Esta es la Imágen de Colombia -->
+        <a class="section__nav" href="{% url 'register:addspace' %}">
+            <img class="nav__img" src="{% static 'register/state.svg' %}" alt=" Este es el logo de un Pais. El ingreso para Agregar, Editar o Modicar una ciudad o departamento">
+        </a>  
+        <!-- Esta es la Imágen de Ciudados -->    
+        <a class="section__nav" href="{% url 'register:add' %}">
+            <img class="nav__img" src="{% static 'register/citizen.svg' %}" alt="Este es el logo de habitantes. el ingreso para Agregar, Editar o Modificar Habitantes">
+        </a>
+        <!-- Esta es la Imágen de Logout -->
+        <a class="section__nav" href="{% url 'logout' %}">
+            <img class="nav__img" src="{% static 'register/logout.svg' %}" alt="Este es el logo de salida. Para cerra sesion">
+        </a>
     </nav>
     {% block  main %}
     {% endblock  %}

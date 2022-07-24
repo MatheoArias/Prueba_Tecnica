@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     "registration.apps.RegistrationConfig",
     
 
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,9 +125,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 # Auth redirects
-LOGIN_REDIRECT_URL = 'register:add'
+LOGIN_REDIRECT_URL = 'register:menu'
 LOGOUT_REDIRECT_URL = 'login'
+
 
 if DEBUG:
     EMAIL_BACKEND = "django.core.mail.backend.filebased.EmailBackend"

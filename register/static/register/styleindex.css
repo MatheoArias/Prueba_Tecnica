@@ -1,3 +1,4 @@
+/* Agrego estilos a todas las hojas que van a heredar de styleindex.css */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,7 +7,7 @@
     font-family: 'Poppins', sans-serif;
     
 }
-
+/* Agrego el estilo básico a todas las secciones 'body' que van a heredar de styleindex.css */
 body{
     display: grid;
     grid-template-areas: "nav header header"
@@ -16,7 +17,8 @@ body{
     grid-template-columns:30vh repeat(2, 1fr);
     grid-template-rows:  15vh repeat(3, 28.3vh)
 }
-
+/* Comienzan los estilos del header */
+/*Agrego estilos a la sección 'header' 'body' que van a heredar de styleindex.css */
 header{
     grid-area: header;
     font-size: 4rem;
@@ -29,6 +31,7 @@ header{
     
 }
 
+/*Agrego estilos a la sección 'h1' 'body' que van a heredar de styleindex.css */
 header h1{
     display:flex ;
     align-items: center;
@@ -39,7 +42,10 @@ header h1{
     background: #ffffff;
 
 }
+/* Terminan los estilos del header */
 
+/* Comienzan los estilos del NavaBar */
+/*Agrego estilos a la sección 'nav' 'body' que van a heredar de styleindex.css */
 nav {
     position: sticky;
     grid-area: nav;
@@ -69,6 +75,9 @@ nav a img {
     background: #ffffff;
     border-radius: 3rem;
 }
+/* Terminan Los estilos del Navbar */
+
+/* Comienzan los estilos del template 'add' */
 .main__add{
     justify-self: center;
     align-self: center;
@@ -84,7 +93,8 @@ nav a img {
     height: 90%;
     border-radius: 3rem ;
 }
-
+/* Agrego al etiqueta main en ves de la clase, debido a que existen estilos que puedo heredar en los otros templates */
+/* Agrego estilos a la sección 'form' template 'add' */
 main .main__form{
     grid-area:form;
     width: 100%;
@@ -133,7 +143,7 @@ main .main__form .form__city--input select{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:4rem;
+    height:3rem;
     width: 13rem;
     font-size: 1.4rem;
     align-content: center;
@@ -142,7 +152,12 @@ main .main__form .form__city--input select{
     border-radius: 3rem
 }
 
+#button:hover{
+    background: linear-gradient(90deg, #FFFC00 0%, #FFFFFF 100%);
+    color: #0d0d0d;
+}
 
+/* Agrego estilos a las listas del template 'add' */
 .main__add .main_list{
     grid-area:list;
     width: 90%;
@@ -155,6 +170,7 @@ main .main__form .form__city--input select{
     overflow-y: scroll;
 }
 
+/* Este es el contenedor de las listas */
 .main__add .main_list ul{
     display: flex;
     justify-content: center;
@@ -164,7 +180,7 @@ main .main__form .form__city--input select{
     margin: 0.5rem auto;
     border-radius: 2rem;
 }
-
+/* Esta es cada elemento de la lista*/
 .main__add .main_list li{
     text-align: center;
     font-weight: 400;
@@ -180,6 +196,7 @@ main .main__form .form__city--input select{
     width: 50%;
     height: 90%;
 }
+/* Estos son los botones de las listas */
 .main__add .main_list a button{
     display: flex;
     justify-content: center;
@@ -189,11 +206,6 @@ main .main__form .form__city--input select{
     border-radius: 50%;
     width:60%;
     height: 100%;
-}
-
-#button:hover{
-    background: linear-gradient(90deg, #FFFC00 0%, #FFFFFF 100%);
-    color: #0d0d0d;
 }
 
 .main__add .main_list a img{
@@ -211,6 +223,7 @@ main .main__form .form__city--input select{
     font-size: 1rem;
 }
 
+/* Aquí comienzan los testilos de template 'addspace' */
 .main__addspace{
     justify-self: center;
     align-self: center;
@@ -228,12 +241,13 @@ main .main__form .form__city--input select{
     overflow-y: hidden;
     padding: 1rem;
 }
+/* Agrego estilo para la sección Departamentos */
 .main__addspace .main__state--section{
     grid-area: state;
     display: grid;
-    grid-template-rows: 45% 10% 45%;
+    grid-template-rows: 45% 5% 45%;
 }
-
+/* Agrego estilo para el 'form' de la sección Departamentos del tempplate 'addspace' */
 .main__addspace .main__state--section form{
     grid-column: 1/3;
     grid-row: 1/2;
@@ -275,6 +289,7 @@ main .main__form .form__city--input select{
     text-align: center;
 }
 
+/* Agrego estilo para la sección message del tempplate 'addspace' */
 .main__addspace .main__state--section .main__messages{
     grid-column: 1/3;
     grid-row: 2/3 
@@ -287,8 +302,8 @@ main .main__form .form__city--input select{
     flex-direction: column;
     align-items: center;
 }
-
-
+/* Aquí terminan los estilos para la sección de Departamentos del tempplate 'addspace' */
+/* Agrego estilo para la sección Ciudades del template 'addspace' */
 .main__addspace .main__city--section{
     grid-area: city;
     display: grid;
@@ -296,6 +311,7 @@ main .main__form .form__city--input select{
     align-items: center;
 }
 
+/* Agrego estilo para el 'form' de la sección Ciudades del template 'addspace' */
 .main__addspace .main__city--section form{
     grid-column: 1/3;
     grid-row: 1/2;
@@ -304,6 +320,8 @@ main .main__form .form__city--input select{
     justify-content: center;
     align-items: center;
 }
+
+
 .main__addspace .main__city--section form{
     grid-column: 1/3;
     grid-row: 1/2;
@@ -350,7 +368,9 @@ main .main__form .form__city--input select{
     grid-row: 2/3 
 }
 
+/* Aquí comienzan los estilos para las listas */
 
+/* Agrego estilo al contenedor de las listas en las secciones Departamentos y Ciudades*/
 .main__addspace .main_list{
     overflow-y: scroll;
     width: 90%;
@@ -398,24 +418,7 @@ main .main__form .form__city--input select{
     width:60%;
     height: 100%;
 }
-#button{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height:3rem;
-    width: 13rem;
-    font-size: 1.4rem;
-    align-content: center;
-    background: #0d0d0d;
-    color: #ffffff;
-    border-radius: 3rem
-}
 
-#button:hover{
-    background: linear-gradient(90deg, #FFFC00 0%, #FFFFFF 100%);
-    color: #0d0d0d;
-}
 .main__addspace .main_list a img{
     width: 3rem;
     height: 3rem;
@@ -439,6 +442,7 @@ main .main__form .form__city--input select{
     align-items: center;
 }
 
+/* Aquí comienzan los estilos del template 'signup'  */
 .main__signup{
     grid-area: main;
     justify-self: center;
@@ -450,19 +454,18 @@ main .main__form .form__city--input select{
     height: 90%;
     border-radius: 3rem;
 }
-
+/* Agrego estilo al h1 del template 'signup'  */
 .main__signup h1{
     font-size:2rem;
     font-weight: 700;
     width: 50%;
     text-align: center;
 }
-.main__signup h1::after{
+/* .main__signup h1::after{
     background-image: url('./github.svg');
     background-size: contain;
     background-repeat: no-repeat;
-}
-
+} */
 
 .main__signup .section__Form--signup{
     background: transparent;

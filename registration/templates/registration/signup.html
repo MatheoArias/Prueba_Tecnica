@@ -1,15 +1,23 @@
-{% extends 'register/index.html' %}
-{% load static %}
-{% block  main%}
-<style>.errorlist{color:red;} label{display:None}</style>
-  <main class="main__signup">
-    <h1>Agregar Usuario</h1>
-    <form class='section__Form--signup'action="" method="post">
-      {% csrf_token %}
-          {{form.as_p}}
-      <div class='form__button--singup'>
-          <input type="submit" id="button" value="Acceder">
-      </div>
-    </form>
+{% extends 'register/index.html' %} {% load static %} {% block main%}
+<style>
+  .errorlist {
+    color: red;
+  }
+  label {
+    display: None;
+  }
+</style>
+<main class="main__signup">
+  <h1>Agregar Usuario</h1>
+  <!-- Comienza el fomurlario para registrar un Usuario-->
+  <form class="section__Form--signup" action="" method="post">
+    {% csrf_token %}
+    <!-- Agrego el formulario como grupo de etiquetas p-->
+    {{form.as_p}}
+    <!-- botón del formulario-->
+    <div class="form__button--singup">
+      <input type="submit" id="button" value="Acceder" />
+    </div>
+  </form>
 </main>
 {% endblock %}

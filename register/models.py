@@ -1,11 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 """ Defino el Modelo Departamento
 Ex: Antioquia-Atlántico"""
 class State(models.Model):
-    state_name=models.CharField(("Departamento"),max_length=50,blank=False,unique=True)
     indicative= models.IntegerField(verbose_name="Indicativo", blank=False,unique=True)
+    state_name=models.CharField(("Departamento"),max_length=50,blank=False,unique=True)
 
 
     class Meta:
@@ -35,9 +36,11 @@ class City(models.Model):
 
 """ Defino el Modelo Habitante"""
 class Citizen(models.Model):
+    id_user=models.ForeignKey(User,verbose_name="usuario",on_delete=models.CASCADE)
     date=models.DateField(auto_now_add=True)
     cc=models.IntegerField(blank=False,verbose_name="C.C.",unique=True)
     city=models.ForeignKey(City,verbose_name="Ciudad", blank=False,on_delete=models.CASCADE)
+    id_indicative=models.ForeignKey(State,verbose_name="Departamento", blank=False,on_delete=models.CASCADE)
     first_name=models.CharField(("Primer Nombre"),max_length=50,blank=False)
     last_name=models.CharField(("Segundo Nombre"),max_length=50,blank=True)
     first_surnames=models.CharField(("Primer Apellido"), max_length=50,blank=False)

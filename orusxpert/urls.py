@@ -1,10 +1,17 @@
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 
-app_name='register'
+# El nombre de la aplicación principal será 'register',  con esto en las urls usaré ''register:#nombreapp'
+app_name = 'register'
+
+# Incluyo las carpetas de la 'urls' de las aplicaciones
 urlpatterns = [
+
+
     path('admin/', admin.site.urls),
     path("register/", include("register.urls")),
-    path('',include('django.contrib.auth.urls')),
-    path('',include('registration.urls')),
+    path('', include('django.contrib.auth.urls')),
+    path('', include('registration.urls')),
+
+
 ]
