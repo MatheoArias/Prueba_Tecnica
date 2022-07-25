@@ -1,19 +1,20 @@
-from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-
-class UserCreationFormWithEmail(UserCreationForm):
-    email = forms.EmailField(
-        required=True)
-
+class FormUser(UserCreationForm):
     class Meta:
-        model = User
-        fields = {"username", "email", "password1", "password2"}
-
-    def clean_email(self):
-        email = self.cleaned_data.get("email")
-        if User.objects.filter(email=email).exists():
-            raise forms.ValidationError(
-                "El email ya se registró, prueba con otro")
-        return email
+        model=User
+        fields=[
+            'username',
+            'first_name',
+            'last_name',
+            'email',           
+        ]
+        labels={
+            'last_login':'última conexión',
+            'username':'Nombre de Usuario',
+            'first_name':'Primer Nombre',
+            'last_name':'Apellidos',
+            'email':'Correo Electrónico',
+        }
+        

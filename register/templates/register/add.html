@@ -12,7 +12,7 @@
             </div>
             <!-- Select para agregar la Idicativo departamento. El departamento debe estar previamente agregado-->
             <div class="form__inputs form__city--input">
-                <label for="id_city">Indicativo</label>
+                <label for="id_city">Departamento</label>
                 {{form.id_indicative}}
             </div>
             <!-- Select para agregar la Ciudad. la Ciudad debe estar previamente agregada -->
@@ -81,7 +81,8 @@
                         </div>
                         <!-- 'Propiedad Ciudad' del elemento de la lista -->
                         <div class="list__atributte">      
-                                {{citizen.direction}}
+                                {{citizen.direction}}, 
+                                {{citizen.city}}
                         </div>
                         <!-- 'Propiedad Contactos' del elemento de la lista -->
                         <div class="list__atributte">

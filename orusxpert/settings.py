@@ -131,6 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'register:menu'
 LOGOUT_REDIRECT_URL = 'login'
 
+ION_SAVE_EVERY_REQUEST=True
 
 if DEBUG:
     EMAIL_BACKEND = "django.core.mail.backend.filebased.EmailBackend"
